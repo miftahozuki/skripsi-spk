@@ -9,6 +9,15 @@
   <!-- CSS files -->
   <link href="{{ asset('assets/css/tabler.min.css?1684106062') }}" rel="stylesheet" />
   <link rel="stylesheet" href="{{ asset('assets/bootstrap-icons/font/bootstrap-icons.min.css') }}">
+  <link href="{{ asset('assets/dt-table/datatables.min.css') }}" rel="stylesheet">
+  <style>
+    #tabel > thead > tr > th{
+        background-color: #206bc4;
+    }
+    .dt-input {
+      margin-right: 1rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -26,6 +35,11 @@
 
   <!-- Libs JS -->
   <script src="{{ asset('assets/js/tabler.min.js?1684106062') }}" defer></script>
+  <script src="{{ asset('assets/js/jquery-3.7.1.slim.min.js') }}"></script>
+  <script src="{{ asset('assets/dt-table/datatables.min.js') }}"></script>
+  <script>
+  let table = new DataTable('#tabel');
+  </script>
 
 </body>
 

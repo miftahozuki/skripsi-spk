@@ -21,4 +21,6 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/dashboard', [fuzzy\DashboardController::class, 'index'])->name('dashboard');
     Route::get('/data-variabel', [fuzzy\VariabelController::class, 'index'])->name('data-variabel');
+    Route::get('/data-himpunan', [fuzzy\HimpunanController::class, 'index'])->name('data-himpunan');
+    Route::get('/data-karyawan', [fuzzy\AlternatifController::class, 'index'])->name('data-karyawan');
 }); 

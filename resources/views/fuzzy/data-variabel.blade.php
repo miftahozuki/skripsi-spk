@@ -68,7 +68,7 @@
                                 </tr>
                                 <tr>
                                     <td>2.</td>
-                                    <td class="text-center">Masa Kerja</td>
+                                    <td class="text-center">Kehadiran</td>
                                     <td>
                                         <div class="btn-list flex-nowrap">
                                             <a href="#" class="btn btn-outline-success"> Edit </a>
