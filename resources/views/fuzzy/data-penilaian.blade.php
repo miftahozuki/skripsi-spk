@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <!-- Page pre-title -->
-                <h2 class="page-title"><i class="bi bi-people-fill me-3"></i>Data Alternatif</h2>
+                <h2 class="page-title"><i class="bi bi-pencil-square me-3"></i>Data Penilaian</h2>
             </div>
             <!-- Page title actions -->
             <div class="col-auto ms-auto d-print-none">
@@ -44,7 +44,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title text-primary me-3"><i class="bi bi-table me-3"></i>Daftar Data Alternatif</h3>
+                        <h3 class="card-title text-primary me-3"><i class="bi bi-table me-3"></i>Daftar Data Penilaian</h3>
                     </div>
                     <div class="table-responsive mx-4 mt-3">
                         <table id="tabel" class="table table-vcenter tabel">
@@ -52,7 +52,7 @@
                             <tr>
                                 <th class="text-white">No.</th>
                               <th class="w-75 text-center text-white">Nama</th>
-                              <th class="text-white">Aksi</th>
+                              <th class="text-white text-center">Aksi</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -61,9 +61,8 @@
                                 <td class="text-center">{{ $index }}.</td>
                                 <td>Karyawan {{ $index }}</td>
                                 <td>
-                                    <div class="btn-list flex-nowrap">
-                                        <a href="#" class="btn btn-outline-success"> Edit </a>
-                                        <a href="#" class="btn btn-outline-danger"> Hapus </a>
+                                    <div class="btn-list flex-nowrap justify-content-center">
+                                        <a href="#" class="btn btn-outline-success"><i class="bi bi-plus-lg pe-2"></i> Input </a>
                                     </div>
                                 </td>
                             </tr>

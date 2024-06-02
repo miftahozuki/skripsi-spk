@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <!-- Page pre-title -->
-                <h2 class="page-title"><i class="bi bi-box-fill me-3"></i></i>Data Himpunan Fuzzy</h2>
+                <h2 class="page-title"><i class="bi bi-box-fill me-3"></i>Data Himpunan Fuzzy</h2>
             </div>
             <!-- Page title actions -->
             <!-- end -->
@@ -28,9 +28,9 @@
                     </a>
                     </div>
                     <div class="table-responsive mx-4">
-                        <table class="table">
-                            <tbody>
-                                <tr class="bg-primary">
+                        <table id="tabel" class="table">
+                            <thead>
+                                <tr>
                                     <th class="text-white">NO</th>
                                     <th class="w-50 text-center text-white">
                                         Nama Himpunan Fuzzy
@@ -39,6 +39,8 @@
                                     <th class="text-center text-white">Domain</th>
                                     <th class="text-center text-white">Aksi</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
                                     <td>1.</td>
                                     <td>Kurang</td>
@@ -93,17 +95,19 @@
                     </a>
                     </div>
                     <div class="table-responsive mx-4">
-                        <table class="table">
+                        <table id="tabel" class="table">
+                            <thead>
+                            <tr class="bg-primary">
+                                <th class="text-white">NO</th>
+                                <th class="w-50 text-center text-white">
+                                    Nama Himpunan Fuzzy
+                                </th>
+                                <th class="w-25 text-center text-white">Jenis Kurva</th>
+                                <th class="text-center text-white">Domain</th>
+                                <th class="text-center text-white">Aksi</th>
+                            </tr>
+                            </thead>
                             <tbody>
-                                <tr class="bg-primary">
-                                    <th class="text-white">NO</th>
-                                    <th class="w-50 text-center text-white">
-                                        Nama Himpunan Fuzzy
-                                    </th>
-                                    <th class="w-25 text-center text-white">Jenis Kurva</th>
-                                    <th class="text-center text-white">Domain</th>
-                                    <th class="text-center text-white">Aksi</th>
-                                </tr>
                                 <tr>
                                     <td>1.</td>
                                     <td>Kurang</td>

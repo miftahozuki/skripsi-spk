@@ -38,7 +38,22 @@
   <script src="{{ asset('assets/js/jquery-3.7.1.slim.min.js') }}"></script>
   <script src="{{ asset('assets/dt-table/datatables.min.js') }}"></script>
   <script>
-  let table = new DataTable('#tabel');
+  let table = new DataTable('.tabel');
+  const clock=document.querySelector('.clock');
+
+  function digitalClock() {
+    var time = new Date();
+    var jam = String(time.getHours()).padStart(2, '0');
+    var menit = String(time.getMinutes()).padStart(2, '0');
+    var detik = String(time.getSeconds()).padStart(2, '0');
+
+    
+    clock.innerHTML = clock.innerHTML=`${jam}:${menit}:${detik}`;
+  }
+
+  digitalClock();
+  setInterval(digitalClock, 1000);
+
   </script>
 
 </body>

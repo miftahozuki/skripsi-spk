@@ -47,15 +47,17 @@
                         <h3 class="card-title text-white me-8">Daftar Data Variabel</h3>
                     </div> --}}
                     <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                                <tr class="bg-primary">
+                        <table id="tabel" class="table">
+                            <thead>
+                                <tr>
                                     <th class="text-white">NO</th>
                                     <th class="w-100 text-center text-white">
                                         NAMA VARIABEL
                                     </th>
                                     <th class="text-center text-white">AKSI</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
                                     <td>1.</td>
                                     <td class="text-center">Masa Kerja</td>
