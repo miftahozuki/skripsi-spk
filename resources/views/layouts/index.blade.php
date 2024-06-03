@@ -41,7 +41,7 @@
       @include('layouts.footer')
     </div>
   </div>
-  @include('vendor/sweetalert/alert')
+  @include('sweetalert::alert')
   <!-- Libs JS -->
   <script src="{{ asset('assets/js/tabler.min.js?1684106062') }}" defer></script>
   <script src="{{ asset('assets/js/jquery-3.7.1.slim.min.js') }}"></script>
