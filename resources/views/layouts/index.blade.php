@@ -4,13 +4,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+  {{-- <meta http-equiv="X-UA-Compatible" content="ie=edge" /> --}}
   <title>Dashboard - SPK Fuzzy</title>
   <!-- CSS files -->
+  <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}">
   <link href="{{ asset('assets/css/tabler.min.css?1684106062') }}" rel="stylesheet" />
   <link rel="stylesheet" href="{{ asset('assets/bootstrap-icons/font/bootstrap-icons.min.css') }}">
   <link href="{{ asset('assets/dt-table/datatables.min.css') }}" rel="stylesheet">
   <style>
+    @font-face {
+    font-family: 'Poppins';
+    src: url('{{ asset('assets/fonts/Poppins-Regular.ttf') }}');
+  }
+    :root {
+  --tblr-font-sans-serif: 'Poppins';
+    }
     #tabel > thead > tr > th{
         background-color: #206bc4;
     }
@@ -32,7 +41,7 @@
       @include('layouts.footer')
     </div>
   </div>
-
+  @include('vendor/sweetalert/alert')
   <!-- Libs JS -->
   <script src="{{ asset('assets/js/tabler.min.js?1684106062') }}" defer></script>
   <script src="{{ asset('assets/js/jquery-3.7.1.slim.min.js') }}"></script>
