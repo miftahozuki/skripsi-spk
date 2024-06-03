@@ -11,7 +11,7 @@ class VariabelController extends Controller
 {
     public function index() {
         $kriteria = Kriteria::get();
-        // confirmDelete('Hapus Veriabel', 'Apakah kamu yakin untuk mengapus?');
+        confirmDelete('Hapus Veriabel', 'Apakah kamu yakin untuk mengapus?');
         return view('fuzzy.data-variabel', compact('kriteria'));
     }
 
