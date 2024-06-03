@@ -10,8 +10,8 @@
             <!-- Page title actions -->
             <div class="col-auto ms-auto d-print-none">
                 <div class="btn-list">
-                    <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal"
-                        data-bs-target="#modal-report">
+                    <a href="" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal"
+                        data-bs-target="#add">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                             stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                             stroke-linejoin="round">
@@ -52,18 +52,18 @@
                             <tr>
                                 <th class="text-white">No.</th>
                               <th class="w-75 text-center text-white">Nama</th>
-                              <th class="text-white">Aksi</th>
+                              <th class="text-white text-center">Aksi</th>
                             </tr>
                           </thead>
                           <tbody>
-                            @foreach(range(1, 5) as $index)
+                            @foreach($karyawan as $item)
                             <tr>
-                                <td class="text-center">{{ $index }}.</td>
-                                <td>Karyawan {{ $index }}</td>
+                                <td class="text-center">{{ $loop->index +1}}.</td>
+                                <td>{{ $item->nama }}</td>
                                 <td>
                                     <div class="btn-list flex-nowrap">
                                         <a href="#" class="btn btn-outline-success"> Edit </a>
-                                        <a href="#" class="btn btn-outline-danger"> Hapus </a>
+                                        <a href="{{ route('data-karyawan.destroy', $item->id_karyawan) }}" class="btn btn-outline-danger" data-confirm-delete="true"> Hapus </a>
                                     </div>
                                 </td>
                             </tr>
@@ -78,4 +78,31 @@
     </div>
 </div>
 
+<!-- modal -->
+<div class="modal" id="add" tabindex="-1">
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tambah Data Karyawan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="{{ route('data-karyawan.store') }}" method="POST">
+        @csrf
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Nama Karyawan</label>
+            <input type="text" class="form-control" name="nama"/>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-end">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-floppy-fill me-2"></i>
+            Simpan
+        </button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
 @endsection
