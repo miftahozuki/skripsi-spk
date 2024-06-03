@@ -4,11 +4,7 @@
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.6.1" }
     },
-    "routes": [
-    {
-        "src": "/vendor/(.*)",
-        "dest": "public/vendor/"
-    },    
+    "routes": [   
     {
         "src": "/assets/(.*)",
         "dest": "public/assets/"
