@@ -46,25 +46,21 @@
                             <tr>
                                 <th class="text-white">No.</th>
                               <th class="text-center text-white">Nama</th>
-                              <th class="text-white text-center">Masa Kerja</th>
-                              <th class="text-white text-center">Pendidikan</th>
-                              <th class="text-white text-center">Posisi</th>
-                              <th class="text-white text-center">Beban Kerja</th>
-                              <th class="text-white text-center">Kehadiran</th>
+                              @foreach($kriteria as $item)
+                              <th class="text-white text-center">{{ $item->kriteria }}</th>
+                              @endforeach
                               <th class="text-white text-center">Fire Strength</th>
                             </tr>
                           </thead>
                           <tbody>
-                            @foreach(range(1, 5) as $index)
+                            @foreach($karyawans as $karyawan)
                             <tr>
-                                <td class="text-center">{{ $index }}.</td>
-                                <td>Karyawan {{ $index }}</td>
-                                <td class="text-center">0</td>
-                                <td class="text-center">1</td>
-                                <td class="text-center">0</td>
-                                <td class="text-center">0</td>
-                                <td class="text-center">1</td>
-                                <td class="text-center">0,34</td>
+                                <td class="text-center">{{ $loop->index +1}}.</td>
+                                <td>{{ $karyawan->nama }}</td>
+                                @foreach ($karyawan->kriteria as $kriteria)
+                                <td class="text-center">{{$kriteria->pivot->nilai}}</td>
+                                @endforeach
+                                <td class="text-center">N/A</td>
                             </tr>
                         @endforeach                        
                           </tbody>

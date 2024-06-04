@@ -8,31 +8,6 @@
                 <h2 class="page-title"><i class="bi bi-pencil-square me-3"></i>Data Penilaian</h2>
             </div>
             <!-- Page title actions -->
-            <div class="col-auto ms-auto d-print-none">
-                <div class="btn-list">
-                    <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal"
-                        data-bs-target="#modal-report">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M12 5l0 14" />
-                            <path d="M5 12l14 0" />
-                        </svg>
-                        Tambah
-                    </a>
-                    <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal"
-                        data-bs-target="#modal-report" aria-label="Create new report">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M12 5l0 14" />
-                            <path d="M5 12l14 0" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -56,13 +31,14 @@
                             </tr>
                           </thead>
                           <tbody>
-                            @foreach(range(1, 5) as $index)
+                            @foreach($karyawan as $item)
                             <tr>
-                                <td class="text-center">{{ $index }}.</td>
-                                <td>Karyawan {{ $index }}</td>
+                                <td class="text-center">{{ $loop->index +1}}.</td>
+                                <td>{{ $item->nama }}</td>
                                 <td>
                                     <div class="btn-list flex-nowrap justify-content-center">
-                                        <a href="#" class="btn btn-outline-success"><i class="bi bi-plus-lg pe-2"></i> Input </a>
+                                        <a href="#" class="btn btn-outline-success" data-bs-toggle="modal"
+                                        data-bs-target="#input-nilai{{ $item->id_karyawan }}"><i class="bi bi-plus-lg pe-2"></i> Input </a>
                                     </div>
                                 </td>
                             </tr>
@@ -77,4 +53,39 @@
     </div>
 </div>
 
+@foreach($karyawan as $row)
+<!-- modal -->
+<div class="modal" id="input-nilai{{ $row->id_karyawan }}" tabindex="-1">
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Input Nilai</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        {{-- <form action="{{ route('data-penilaian.store') }}" method="POST">
+        @csrf --}}
+        <div class="modal-body">
+            @foreach ($kriteria as $item)
+            <form action="{{ route('data-penilaian.store') }}" method="POST">
+            @csrf
+          <div class="mb-3">
+            <label class="form-label">{{ $item->kriteria }}</label>
+            <input type="hidden" name="karyawan_id" value="{{ $row->id_karyawan }}">
+            <input type="text" class="form-control" name="kriteria[{{$item->id_kriteria}}]">
+          </div>
+          @endforeach
+        </div>
+        <div class="modal-footer justify-content-end">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-floppy-fill me-2"></i>
+            Simpan
+        </button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+  @endforeach
 @endsection
