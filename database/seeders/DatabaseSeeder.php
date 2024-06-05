@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             KriteriaSeeder::class,
-            KaryawanSeeder::class
+            KaryawanSeeder::class,
+            HimpunanSeeder::class
         ]);
     }
 }

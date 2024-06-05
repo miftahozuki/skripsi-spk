@@ -58,7 +58,9 @@
                                     <td>{{ $loop->index  +1}}.</td>
                                     <td>{{ $himpunan->nama_himpunan }}</td>
                                     <td class="text-center">{{ $himpunan->jenis_kurva }}</td>
-                                    <td class="text-center">[{{ implode(',', array_filter([$himpunan->nilai_a, $himpunan->nilai_b, $himpunan->nilai_c, $himpunan->nilai_d])) }}]</td>
+                                    <td class="text-center">[{{ implode(',', array_filter([$himpunan->nilai_a, $himpunan->nilai_b, $himpunan->nilai_c, $himpunan->nilai_d], fn($nilai)=>
+                                      $nilai !== null || $nilai === 0
+                                    )) }}]</td>
                                     <td>
                                         <div class="btn-list flex-nowrap">
                                             <a href="#" class="btn btn-outline-success" data-bs-toggle="modal"
@@ -100,6 +102,9 @@
             <label class="form-label">Pilih Kurva</label>
             <select class="form-select kurva" name="jenis_kurva" aria-label="Default select example">
                 <option>--Pilih Kurva--</option>
+                <option>Segitiga</option>
+                <option>Linear Turun</option>
+                <option>Linear Naik</option>
                 <option>Bahu Kiri</option>
                 <option>Trapesium</option>
                 <option>Bahu Kanan</option>
@@ -156,6 +161,9 @@
           <div class="mb-3">
             <label class="form-label">Pilih Kurva</label>
             <select class="form-select kurva" name="jenis_kurva" aria-label="Default select example">
+                <option {{ $himpunan->jenis_kurva == 'Segitiga' ? 'selected' : '' }}>Segitiga</option>
+                <option {{ $himpunan->jenis_kurva == 'Linear Turun' ? 'selected' : '' }}>Linear Turun</option>
+                <option {{ $himpunan->jenis_kurva == 'Linear Naik' ? 'selected' : '' }}>Linear Naik</option>
                 <option {{ $himpunan->jenis_kurva == 'Bahu Kiri' ? 'selected' : '' }}>Bahu Kiri</option>
                 <option {{ $himpunan->jenis_kurva == 'Trapesium' ? 'selected' : '' }}>Trapesium</option>
                 <option {{ $himpunan->jenis_kurva == 'Bahu Kanan' ? 'selected' : '' }}>Bahu Kanan</option>
@@ -208,11 +216,16 @@
         switch($(this).val()) {
             case "Bahu Kiri":
             case "Bahu Kanan":
+            case "Linear Turun":
+            case "Linear Naik":
                 a.add(b).removeClass('d-none');
                 c.add(d).addClass('d-none');
                 break;
             case "Trapesium":
                 a.add(b).add(c).add(d).removeClass('d-none');
+                break;
+            case "Segitiga":
+                a.add(b).add(c).removeClass('d-none');
                 break;
             default:
                 a.add(b).add(c).add(d).addClass('d-none');

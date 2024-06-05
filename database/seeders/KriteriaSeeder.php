@@ -13,7 +13,7 @@ class KriteriaSeeder extends Seeder
      */
     public function run(): void
     {
-        $kriteria = ['Masa Kerja', 'Pendidikan', 'Posisi', 'Kehadiran'];
+        $kriteria = ['Masa Kerja', 'Pendidikan', 'Posisi', 'Kehadiran', 'Kinerja', 'Beban Kerja'];
 
         foreach($kriteria as $item) {
             Kriteria::Create([
