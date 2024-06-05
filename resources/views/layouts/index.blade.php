@@ -64,6 +64,7 @@
   setInterval(digitalClock, 1000);
 
   </script>
+  @stack('script')
 
 </body>
 

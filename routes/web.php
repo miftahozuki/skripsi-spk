@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/dashboard', [fuzzy\DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/data-variabel', fuzzy\VariabelController::class)->except('show');
-    Route::get('/data-himpunan', [fuzzy\HimpunanController::class, 'index'])->name('data-himpunan');
+    Route::resource('/data-himpunan', fuzzy\HimpunanController::class);
     Route::resource('/data-karyawan', fuzzy\AlternatifController::class)->except('show');
     Route::resource('/data-penilaian', fuzzy\PenilaianController::class)->except('show');
     Route::get('/data-perhitungan', [fuzzy\PerhitunganController::class, 'index'])->name('data-perhitungan'); //belum fix
