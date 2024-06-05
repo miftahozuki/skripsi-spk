@@ -6,13 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kriteria;
 use App\Models\Karyawan;
-use App\Models\Penilaian;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PenilaianController extends Controller
 {
     public function index() {
         $kriteria = Kriteria::get();
-        $karyawan = Karyawan::get();
+        // $karyawan = Karyawan::get();
+        $karyawan = Karyawan::with('kriteria')->get();
         return view('fuzzy.data-penilaian', compact('kriteria', 'karyawan'));
     }
 
@@ -23,6 +24,7 @@ class PenilaianController extends Controller
         
         $karyawan = Karyawan::find($request->input('karyawan_id'));
         $karyawan->kriteria()->sync($kriteria);
+        Alert::success('Berhasil', 'Berhasil menginput nilai.');
 
         return redirect()->back();
     }

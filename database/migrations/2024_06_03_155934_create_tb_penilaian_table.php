@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id('id_penilaian');
             $table->unsignedBigInteger('kriteria_id');
             $table->unsignedBigInteger('karyawan_id');
-            $table->foreign('kriteria_id')->references('id_kriteria')->on('tb_kriteria');
-            $table->foreign('karyawan_id')->references('id_karyawan')->on('tb_karyawan');
+            $table->foreign('kriteria_id')->references('id_kriteria')->on('tb_kriteria')->onDelete('cascade');
+            $table->foreign('karyawan_id')->references('id_karyawan')->on('tb_karyawan')->onDelete('cascade');
             $table->integer('nilai');
             $table->timestamps();
         });
