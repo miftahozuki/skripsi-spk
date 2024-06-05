@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('jenis_kurva');
             $table->integer('nilai_a');
             $table->integer('nilai_b');
-            $table->integer('nilai_c');
-            $table->integer('nilai_d');
+            $table->integer('nilai_c')->nullable();
+            $table->integer('nilai_d')->nullable();
             $table->timestamps();
         });
     }
