@@ -25,16 +25,16 @@
                     </div>
                     <div class="container">
                         <div class="justify-content-center row g-3 mb-5">
-                            @for($i=0;$i<6;$i++)
+                            @foreach ($kriteria as $item)
                             <div class="col-auto">
-                                <label class="my-2" for="">Masa Kerja</label>
-                                <select class="form-select pe-7" aria-label="Default select example">
-                                    <option selected>Baik</option>
-                                    <option value="1">Cukup</option>
-                                    <option value="2">Kurang</option>
+                                <label class="my-2" for="">{{$item->kriteria }}</label>
+                                <select class="form-select pe-7 text-truncate" aria-label="Default select example">
+                                    @foreach($item->himpunan as $himpunan)
+                                    <option title="{{ $himpunan->nama_himpunan }}" {{ $loop->first ? 'selected' : '' }}>{{ substr($himpunan->nama_himpunan, 0, 50) }}</option>
+                                    @endforeach
                                   </select>
                             </div>
-                            @endfor                          
+                            @endforeach                          
                         </div>
                     </div>
                     <div class="hr-text">
