@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             KriteriaSeeder::class,
             KaryawanSeeder::class,
-            HimpunanSeeder::class
+            HimpunanSeeder::class,
+            MasaKerjaSeeder::class
         ]);
     }
 }
