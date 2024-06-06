@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="row row-cards">
+        <div class="row row-cards d-none">
             <div class="col-12">
                 
                 <div class="card">
@@ -93,6 +93,41 @@
                                     <td class="text-center">0</td>
                                 </tr>
                             </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cards">
+            <div class="col-12">
+                
+                <div class="card">
+                     <div class="card-header justify-content-between">
+                        <h3 class="card-title text-primary"><i class="bi bi-table me-2"></i> Matriks Keputusan (X)</h3>
+                    </div>
+                    <div class="table-responsive mx-4 mt-3">
+                        <table id="tabel" class="table table-vcenter">
+                          <thead>
+                            <tr>
+                                <th class="text-white">No.</th>
+                              <th class="text-center text-white">Nama</th>
+                              @foreach($kriteria as $item)
+                              <th class="text-white text-center">{{ $item->kriteria }}</th>
+                              @endforeach
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @foreach($karyawans as $karyawan)
+                            <tr>
+                                <td class="text-center">{{ $loop->index +1}}.</td>
+                                <td>{{ $karyawan->nama }}</td>
+                                @foreach ($kriteria as $item)
+                                    <td class="text-center">{{ $karyawan->kriteria->
+                                    find($item->id_kriteria)->pivot->nilai ?? '-' }}</td>
+                                @endforeach
+                            </tr>
+                        @endforeach                        
+                          </tbody>
                         </table>
                     </div>
                 </div>
