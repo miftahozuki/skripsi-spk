@@ -11,7 +11,7 @@ use App\Models\Penilaian;
 class HasilAkhirController extends Controller
 {
     public function index() {
-        $kriteria = Kriteria::get();
+        $kriteria = Kriteria::with('himpunan');
         $karyawans = Karyawan::with('kriteria')->get();
         // dd($karyawans);
 

@@ -48,7 +48,7 @@
                           </thead>
                           <tbody>
                             @foreach($karyawans as $karyawan)
-                            <tr>
+                            <tr class="d-none">
                                 <td class="text-center">{{ $loop->index +1}}.</td>
                                 <td>{{ $karyawan->nama }}</td>
                                 @foreach ($karyawan->kriteria as $kriteria)
