@@ -32,7 +32,8 @@ class PerhitunganController extends Controller
        
         foreach ($himpunan as $item) {
             $kurva = new KurvaController($item->id_himpunan);
-            $nilai = $kurva->Segitiga($item->nilai);
+            $jenis = str_replace(' ', '', $item->jenis_kurva);
+            $nilai = $kurva->$jenis($item->nilai);
 
             $data = [
                 'karyawan_id' => $item->karyawan_id,

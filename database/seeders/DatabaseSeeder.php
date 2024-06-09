@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Karyawan;
+use App\Models\Penilaian;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,7 +25,8 @@ class DatabaseSeeder extends Seeder
             KriteriaSeeder::class,
             KaryawanSeeder::class,
             HimpunanSeeder::class,
-            MasaKerjaSeeder::class
+            MasaKerjaSeeder::class,
+            PenilaianSeeder::class
         ]);
     }
 }

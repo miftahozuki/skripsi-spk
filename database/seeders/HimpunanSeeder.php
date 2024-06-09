@@ -111,7 +111,7 @@ class HimpunanSeeder extends Seeder
         [
             'nama_himpunan' => 'Fungsional Umum',
             'kriteria_id' => 3,
-            'jenis_kurva' => 'Bahu Kiri',
+            'jenis_kurva' => 'Segitiga',
             'nilai_a' => 0,
             'nilai_b' => 2,
             'nilai_c' => 4,
@@ -225,10 +225,10 @@ class HimpunanSeeder extends Seeder
             'nama_himpunan' => 'Sangat Baik',
             'kriteria_id' => 5,
             'jenis_kurva' => 'Bahu Kiri',
-            'nilai_a' => 30,
-            'nilai_b' => 35,
-            'nilai_c' => 85,
-            'nilai_d' => 90
+            'nilai_a' => 85,
+            'nilai_b' => 90,
+            'nilai_c' => null,
+            'nilai_d' => null
         ],
 
         // Beban Kerja

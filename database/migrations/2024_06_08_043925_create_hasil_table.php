@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('karyawan_id')->references('id_karyawan')->on('tb_karyawan')->onDelete('cascade');
             $table->unsignedBigInteger('himpunan_id');
             $table->foreign('himpunan_id')->references('id_himpunan')->on('tb_himpunan')->onDelete('cascade');
-            $table->integer('nilai');
+            $table->float('nilai');
             $table->timestamps();
         });
     }
