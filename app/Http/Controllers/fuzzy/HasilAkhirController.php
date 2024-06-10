@@ -26,7 +26,7 @@ class HasilAkhirController extends Controller
 
         $pdf = Pdf::loadView('cetak-pdf.hasil-akhir', ['kriteria' => $kriteria, 'karyawans' => $karyawans, 'id' => $result_id]);
         $pdf->setPaper('a4', 'landscape');
-        return $pdf->stream();
+        return $pdf->stream('hasil-akhir.pdf');
 
     }
 }
