@@ -27,5 +27,6 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('/data-perhitungan', fuzzy\PerhitunganController::class)->except('show');
     Route::get('/data-perhitungan/query={id}', [fuzzy\PerhitunganController::class, 'show'])->name('data-perhitungan.show');
     Route::get('/data-hasil-akhir', [fuzzy\HasilAkhirController::class, 'index'])->name('data-hasil-akhir');
+    Route::get('/data-hasil-akhir/cetak', [fuzzy\HasilAkhirController::class, 'cetak'])->name('data-hasil-akhir.cetak');
 
 }); 

@@ -10,8 +10,7 @@
             <!-- Page title actions -->
             <div class="col-auto ms-auto d-print-none">
                 <div class="btn-list">
-                    <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal"
-                        data-bs-target="#modal-report">
+                    <a href="{{ route('data-hasil-akhir.cetak') }}" class="btn btn-primary d-none d-sm-inline-block" target="_blank">
                         <i class="bi bi-printer-fill me-2"></i>
                         Cetak Data
                     </a>
