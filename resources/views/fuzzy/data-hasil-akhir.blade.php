@@ -41,20 +41,29 @@
                                 <th class="text-white">No.</th>
                               <th class="text-center text-white">Nama</th>
                               @foreach($kriteria as $item)
-                              <th class="text-white text-center">{{ $item->kriteria }}</th>
+                              <th class="text-white text-center">{{ $item->kriteria }} <br>
+                                {{$item->himpunan->whereIn('id_himpunan', $result_id)->first()->nama_himpunan ?? '-'}}
+                            </th>
                               @endforeach
                               <th class="text-white text-center">Fire Strength</th>
                             </tr>
                           </thead>
                           <tbody>
                             @foreach($karyawans as $karyawan)
-                            <tr class="d-none">
+                            <tr>
                                 <td class="text-center">{{ $loop->index +1}}.</td>
                                 <td>{{ $karyawan->nama }}</td>
-                                @foreach ($karyawan->kriteria as $kriteria)
-                                <td class="text-center">{{$kriteria->pivot->nilai}}</td>
+                                @foreach ($kriteria as $item)
+                                <td class="text-center">
+                                    @if($karyawan->himpunan->where('kriteria_id', $item->id_kriteria)->first())
+                                        {{ $karyawan->himpunan->where('kriteria_id',
+                                        $item->id_kriteria)->first()->pivot->nilai }}
+                                        @else
+                                        -
+                                    @endif
+                                </td>
                                 @endforeach
-                                <td class="text-center">N/A</td>
+                                <td class="text-center">{{ number_format($karyawan->himpunan->sum('pivot.nilai') / ($karyawan->himpunan->count()), 2) }}</td>
                             </tr>
                         @endforeach                        
                           </tbody>

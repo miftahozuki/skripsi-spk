@@ -18,6 +18,7 @@ class KurvaController extends Controller
         $this->a = $himpunan->nilai_a;
         $this->b = $himpunan->nilai_b;
         $this->c = $himpunan->nilai_c;
+        $this->d = $himpunan->nilai_d;
     }
 
     public function Segitiga($x) {
@@ -127,7 +128,7 @@ class KurvaController extends Controller
         $c = $this->c;
         $d = $this->d;
 
-        if ($x <= $a) {
+        if ($x <= $a || $x >= $d) {
             return 0;
         }
 
@@ -140,11 +141,7 @@ class KurvaController extends Controller
         }
 
         if ($c < $x && $x <= $d) {
-            return ($c-$x) / ($d-$c);
-        }
-
-        if($x >= $d) {
-            return 0;
+            return ($d-$x) / ($d-$c);
         }
 
         return null;

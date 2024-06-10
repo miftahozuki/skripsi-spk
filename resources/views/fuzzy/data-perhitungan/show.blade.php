@@ -178,6 +178,7 @@
                                         }}
                                     </th>
                                     @endforeach
+                                    <th class="text-white text-center">Fire Strength</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -196,6 +197,7 @@
                                         @endif
                                     </td>
                                     @endforeach
+                                   <td class="text-center">{{number_format( $karyawan->himpunan->sum('pivot.nilai') / ($karyawan->himpunan->count()), 2) }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
