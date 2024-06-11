@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\fuzzy;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,10 @@ use App\Http\Controllers\fuzzy;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
+
+Route::get('/login', [LoginController::class, 'login']);
 
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/dashboard', [fuzzy\DashboardController::class, 'index'])->name('dashboard');

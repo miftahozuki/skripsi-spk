@@ -23,6 +23,9 @@ class HasilAkhirController extends Controller
         $result_id = Hasil::pluck('himpunan_id');
         $kriteria = Kriteria::with('himpunan')->get();
         $karyawans = Karyawan::with('kriteria', 'himpunan')->get();
+        $karyawans = $karyawans->sortByDesc(function ($karyawan) {
+            return $karyawan->himpunan->sum('pivot.nilai');
+        });
 
         $pdf = Pdf::loadView('cetak-pdf.hasil-akhir', ['kriteria' => $kriteria, 'karyawans' => $karyawans, 'id' => $result_id]);
         $pdf->setPaper('a4', 'landscape');
