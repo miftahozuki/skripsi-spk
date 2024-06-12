@@ -19,9 +19,11 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-Route::get('/login', [LoginController::class, 'login']);
+Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/dashboard', [fuzzy\DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/data-variabel', fuzzy\VariabelController::class)->except('show');
     Route::resource('/data-himpunan', fuzzy\HimpunanController::class);

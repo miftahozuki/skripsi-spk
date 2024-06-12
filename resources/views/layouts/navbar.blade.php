@@ -148,13 +148,16 @@
               aria-label="Open user menu">
               <img class="avatar avatar-sm" src="{{ asset('assets/img/user.svg') }}" alt="M">
               <div class="d-none d-xl-block ps-2">
-                <div>Miftahus</div>
+                <div>{{ Auth::user()->name }}</div>
                 <div class="mt-1 small text-muted">Admin</div>
               </div>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-              <a href="./settings.html" class="dropdown-item">Settings</a>
-              <a href="./sign-in.html" class="dropdown-item">Logout</a>
+              <a href="#" class="dropdown-item">Settings</a>
+              <form action="/logout" method="POST">
+                @csrf
+                <button type="submit" class="dropdown-item">Logout</button>
+              </form>
             </div>
           </div>
         </div>

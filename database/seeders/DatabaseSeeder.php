@@ -26,7 +26,8 @@ class DatabaseSeeder extends Seeder
             KaryawanSeeder::class,
             HimpunanSeeder::class,
             MasaKerjaSeeder::class,
-            PenilaianSeeder::class
+            PenilaianSeeder::class,
+            UserSeeder::class
         ]);
     }
 }

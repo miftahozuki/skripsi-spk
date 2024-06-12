@@ -61,7 +61,7 @@
                                     @endif
                                 </td>
                                 @endforeach
-                                <td class="text-center">{{ number_format($karyawan->himpunan->sum('pivot.nilai') / ($karyawan->himpunan->count()), 2) }}</td>
+                                <td class="text-center">{{ number_format($karyawan->himpunan->sum('pivot.nilai') / ($karyawan->himpunan->count()?: 1), 2)?? '0.00' }}</td>
                             </tr>
                         @endforeach                        
                           </tbody>
