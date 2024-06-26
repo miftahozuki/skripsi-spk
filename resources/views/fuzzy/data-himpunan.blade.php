@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <!-- Page pre-title -->
-                <h2 class="page-title"><i class="bi bi-box-fill me-3"></i>Data Himpunan Fuzzy</h2>
+                <h2 class="page-title"><i class="bi bi-alt me-3"></i>Data Himpunan Fuzzy</h2>
             </div>
             <!-- Page title actions -->
             <!-- end -->

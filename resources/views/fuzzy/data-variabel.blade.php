@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <!-- Page pre-title -->
-                <h2 class="page-title"><i class="bi bi-box-fill me-3"></i></i>Data Variabel</h2>
+                <h2 class="page-title"><i class="bi bi-boxes me-3"></i>Data Variabel</h2>
             </div>
             <!-- Page title actions -->
             <div class="col-auto ms-auto d-print-none">
