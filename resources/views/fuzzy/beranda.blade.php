@@ -15,7 +15,7 @@
             </div>
             <!-- Page title actions -->
             <div class="col-auto ms-auto d-print-none">
-              <h2 class="page-title">Selamat datang, {{ Auth::user()->name }}!</h2>
+              <h2 class="page-title d-none d-sm-inline-block"">Selamat datang, {{ Auth::user()->name }}!</h2>
               {{-- <div class="btn-list">
                 <span class="d-none d-sm-inline">
                   <a href="#" class="btn">
@@ -52,7 +52,7 @@
         <div class="container-xl">
           <div class="row row-deck row-cards">
 
-            <div class="col-12">
+            <div class="col-12 mb-4">
               <div class="card card-md">
                 <div class="card-stamp card-stamp-lg">
                   <div class="card-stamp-icon bg-primary">
@@ -74,7 +74,7 @@
                       <h3 class="h1">Sistem Pendukung Keputusan Metode FUZZY TAHANI</h3>
                       <div class="markdown text-muted">
                         <p class="text-justify">Sitem Pendukung Keputusan (SPK) merupakan suatu sistem informasi spesifik yang ditujukan untuk membantu manajemen dalam mengambil keputusan yang berkaitan dengan persoalan yang bersifat semi terstruktur. </p> 
-                        <p class="text-justify">Metode Fuzzy database model Tahani ini masih tetap menggunakan relasi standar, hanya saja model ini menggunakan teori himpunan fuzzy untuk mendapatkan informasi pada query-nya. Tahani mendeskripsikan suatu metode pemrosesan query fuzzy dengan didasarkan atas manipulasjustify
+                        <p class="text-justify">Metode Fuzzy database model Tahani ini masih tetap menggunakan relasi standar, hanya saja model ini menggunakan teori himpunan fuzzy untuk mendapatkan informasi pada query-nya. Tahani mendeskripsikan suatu metode pemrosesan query fuzzy dengan didasarkan atas manipulasi bahasa yang dikenal dengan nama Structure Query Language (SQL).
                         {{-- <a href="https://tabler-icons.io" class="btn btn-primary" target="_blank"
                           rel="noopener">Download icons</a> --}}
                       </div>
