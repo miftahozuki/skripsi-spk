@@ -46,83 +46,16 @@
               <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Last updates</h3>
+                    <h3 class="card-title">Terkini</h3>
                   </div>
                   <div class="list-group list-group-flush list-group-hoverable">
                     <div class="list-group-item">
                       <div class="row align-items-center">
                         <div class="col-auto"><span class="status-dot status-dot-animated bg-red d-block"></span></div>
                         <div class="col text-truncate">
-                          <a href="#" class="text-body d-block">Example 1</a>
+                          <a href="#" class="text-body d-block">Weather</a>
                           <div class="d-block text-muted text-truncate mt-n1">
-                            Change deprecated html tags to text decoration classes (#29604)
-                          </div>
-                        </div>
-                        <div class="col-auto">
-                          <a href="#" class="list-group-item-actions">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted" width="24" height="24"
-                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                              stroke-linecap="round" stroke-linejoin="round">
-                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                              <path
-                                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="list-group-item">
-                      <div class="row align-items-center">
-                        <div class="col-auto"><span class="status-dot d-block"></span></div>
-                        <div class="col text-truncate">
-                          <a href="#" class="text-body d-block">Example 2</a>
-                          <div class="d-block text-muted text-truncate mt-n1">
-                            justify-content:between ⇒ justify-content:space-between (#29734)
-                          </div>
-                        </div>
-                        <div class="col-auto">
-                          <a href="#" class="list-group-item-actions show">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon text-yellow" width="24" height="24"
-                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                              stroke-linecap="round" stroke-linejoin="round">
-                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                              <path
-                                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="list-group-item">
-                      <div class="row align-items-center">
-                        <div class="col-auto"><span class="status-dot d-block"></span></div>
-                        <div class="col text-truncate">
-                          <a href="#" class="text-body d-block">Example 3</a>
-                          <div class="d-block text-muted text-truncate mt-n1">
-                            Update change-version.js (#29736)
-                          </div>
-                        </div>
-                        <div class="col-auto">
-                          <a href="#" class="list-group-item-actions">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted" width="24" height="24"
-                              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                              stroke-linecap="round" stroke-linejoin="round">
-                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                              <path
-                                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="list-group-item">
-                      <div class="row align-items-center">
-                        <div class="col-auto"><span class="status-dot status-dot-animated bg-green d-block"></span>
-                        </div>
-                        <div class="col text-truncate">
-                          <a href="#" class="text-body d-block">Example 4</a>
-                          <div class="d-block text-muted text-truncate mt-n1">
-                            Regenerate package-lock.json (#29730)
+                            Nothing to see Lorem ipsum dolor sit amet.
                           </div>
                         </div>
                         <div class="col-auto">
@@ -154,10 +87,8 @@
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
               <a href="#" class="dropdown-item">Settings</a>
-              <form action="/logout" method="POST">
-                @csrf
-                <button type="submit" class="dropdown-item">Logout</button>
-              </form>
+              <a href="" class="dropdown-item" data-bs-toggle="modal"
+              data-bs-target="#exit" >Logout</a>
             </div>
           </div>
         </div>
@@ -190,12 +121,7 @@
                 <a class="nav-link" href="{{ route('data-variabel.index') }}">
                   <span
                     class="nav-link-icon d-md-none d-lg-inline-block">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M9 11l3 3l8 -8" />
-                      <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" />
-                    </svg>
+                    <i class="bi bi-boxes"></i>
                   </span>
                   <span class="nav-link-title">
                     Data Variabel
@@ -206,12 +132,7 @@
                 <a class="nav-link" href="{{ route('data-himpunan.index') }}">
                   <span
                     class="nav-link-icon d-md-none d-lg-inline-block">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M9 11l3 3l8 -8" />
-                      <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" />
-                    </svg>
+                    <i class="bi bi-alt"></i>
                   </span>
                   <span class="nav-link-title">
                     Data Himpunan Fuzzy
@@ -222,12 +143,7 @@
                 <a class="nav-link" href="{{ route('data-karyawan.index') }}">
                   <span
                     class="nav-link-icon d-md-none d-lg-inline-block">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M9 11l3 3l8 -8" />
-                      <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" />
-                    </svg>
+                    <i class="bi bi-people-fill"></i>
                   </span>
                   <span class="nav-link-title">
                     Data Alternatif
@@ -238,12 +154,7 @@
                 <a class="nav-link" href="{{ route('data-penilaian.index') }}">
                   <span
                     class="nav-link-icon d-md-none d-lg-inline-block">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M9 11l3 3l8 -8" />
-                      <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" />
-                    </svg>
+                    <i class="bi bi-pencil-square"></i>
                   </span>
                   <span class="nav-link-title">
                     Data Penilaian
@@ -254,12 +165,7 @@
                 <a class="nav-link" href="{{ Route('data-perhitungan.index') }}">
                   <span
                     class="nav-link-icon d-md-none d-lg-inline-block">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M9 11l3 3l8 -8" />
-                      <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" />
-                    </svg>
+                    <i class="bi bi-calculator-fill"></i>
                   </span>
                   <span class="nav-link-title">
                     Data Perhitungan
@@ -270,12 +176,7 @@
                 <a class="nav-link" href="{{ Route('data-hasil-akhir') }}">
                   <span
                     class="nav-link-icon d-md-none d-lg-inline-block">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M9 11l3 3l8 -8" />
-                      <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" />
-                    </svg>
+                    <i class="bi bi-graph-down"></i>
                   </span>
                   <span class="nav-link-title">
                     Data Hasil Akhir
@@ -287,4 +188,31 @@
           </div>
         </div>
       </div>
+
+<!-- modal -->
+<div class="modal" id="exit" tabindex="-1">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-exclamation-triangle-fill text-danger h1 me-3"></i> Logout</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <span>Anda yakin ingin keluar?</span>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-end">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Batal</button>
+        <form action="/logout" method="POST">
+          @csrf
+          <button type="submit" class="btn btn-danger">Keluar
+        </form>
+          <i class="bi bi-box-arrow-right ms-2"></i>
+      </button>
+      </div>
+    </div>
+  </div>
+</div>
+
     </header>
