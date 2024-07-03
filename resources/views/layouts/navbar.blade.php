@@ -86,7 +86,7 @@
               </div>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-              <a href="#" class="dropdown-item">Settings</a>
+              <a href="{{ url('admin/profile') }}" class="dropdown-item">Settings</a>
               <a href="" class="dropdown-item" data-bs-toggle="modal"
               data-bs-target="#exit" >Logout</a>
             </div>

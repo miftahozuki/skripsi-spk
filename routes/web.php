@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\fuzzy;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -24,6 +25,8 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+    Route::get('/', fn() => redirect('/login'));
+    Route::get('/profile', [UserController::class, 'index']);
     Route::get('/dashboard', [fuzzy\DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/data-variabel', fuzzy\VariabelController::class)->except('show');
     Route::resource('/data-himpunan', fuzzy\HimpunanController::class);
