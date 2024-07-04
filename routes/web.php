@@ -27,6 +27,8 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/', fn() => redirect('/login'));
     Route::get('/profile', [UserController::class, 'index']);
+    Route::put('/profile', [UserController::class, 'update'])->name('profile.update');
+    Route::post('/profile/change-password', [UserController::class, 'updatePassword'])->name('change-password');
     Route::get('/dashboard', [fuzzy\DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/data-variabel', fuzzy\VariabelController::class)->except('show');
     Route::resource('/data-himpunan', fuzzy\HimpunanController::class);

@@ -34,21 +34,24 @@
                       <i class="bi bi-camera me-2"></i> Ganti avatar
                       </a></div>
                   </div>
+
+                  <form action="{{ route('profile.update') }}" method="POST">
+                    @csrf @method('PUT')
                   <div class="row g-3 mt-2">
                     <div class="col-md">
                       <div class="form-label"><i class="bi bi-card-list me-2"></i>Nama</div>
-                      <input type="text" class="form-control" value="Miftahus">
+                      <input type="text" class="form-control" name="name" value="{{ $user->name }}">
                     </div>
                     <div class="col-md">
                       <div class="form-label"><i class="bi bi-at me-1"></i>Username</div>
-                      <input type="text" class="form-control" value="admin">
+                      <input type="text" class="form-control" name="username" value="{{ $user->username }}">
                     </div>
                   </div>
 
                   <div class="row g-3 mt-2">
                     <div class="col-md">
                       <div class="form-label"><i class="bi bi-envelope-at-fill me-2"></i>Email</div>
-                      <input type="text" class="form-control" value="miftahozuki@gmail.com">
+                      <input type="text" class="form-control" name="email" value="{{ $user->email }}">
                     </div>
                     <div class="d-grid col-md">
                       <div class="form-label"><i class="bi bi-key me-2"></i>Password</div>
@@ -59,12 +62,13 @@
                 </div>
                 <div class="card-footer bg-transparent mt-auto">
                   <div class="btn-list justify-content-end">
-                    <a href="#" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary">
                       <i class="bi bi-floppy-fill me-2"></i> Ubah
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
+            </form>
 
             </div>
           </div>
@@ -83,20 +87,20 @@
         <h5 class="modal-title">Ganti Password</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="#" method="POST">
+      <form action="{{route('change-password')}}" method="POST">
       @csrf
       <div class="modal-body">
         <div class="mb-3">
           <label class="form-label">Password Lama</label>
-          <input type="password" class="form-control" name="pw" placeholder="********"/>
+          <input type="password" class="form-control" name="pw" placeholder="********" required/>
         </div>
         <div class="mb-3">
           <label class="form-label">Password Baru</label>
-          <input type="password" class="form-control" name="pw" placeholder="********"/>
+          <input type="password" class="form-control" name="pw_baru" placeholder="********" required/>
         </div>
         <div class="mb-2">
           <label class="form-label">Verifikasi Password</label>
-          <input type="password" class="form-control" name="pw" placeholder="********"/>
+          <input type="password" class="form-control" name="pw_baru_confirmation" placeholder="********" required/>
         </div>
       </div>
       <div class="modal-footer justify-content-end">
