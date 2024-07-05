@@ -40,3 +40,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/data-hasil-akhir/cetak', [fuzzy\HasilAkhirController::class, 'cetak'])->name('data-hasil-akhir.cetak');
 
 }); 
+
+Route::get('/generate', function(){
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+    echo 'ok';
+ });
