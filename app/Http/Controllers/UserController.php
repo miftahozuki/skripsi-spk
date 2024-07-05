@@ -55,7 +55,8 @@ class UserController extends Controller
 
             $img = 'user-'.$id. '.' .$request->img->extension();
             // $request->file('img')->move(public_path('assets/img'), $img);
-            $request->file('img')->storeAs('assets/img', $img, 'public');
+            $file = $request->file('img')->storeAs('assets/img', $img, 'public');
+            dd($file);
             $user->img = 'assets/img/'.$img;
 
         }
