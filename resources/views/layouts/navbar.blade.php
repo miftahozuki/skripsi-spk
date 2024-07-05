@@ -82,7 +82,7 @@
               <img class="avatar avatar-sm" src="{{ asset('assets/img/user.svg') }}" alt="M">
               <div class="d-none d-xl-block ps-2">
                 <div>{{ Auth::user()->name }}</div>
-                <div class="mt-1 small text-muted">Admin</div>
+                <div class="mt-1 small text-muted">{{ Auth::user()->username }}</div>
               </div>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">

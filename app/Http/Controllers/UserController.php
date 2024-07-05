@@ -21,7 +21,46 @@ class UserController extends Controller
     public function update(Request $request) {
         $id = Auth::user()->id;
         $user = User::find($id);
-        $user->update($request->all());
+
+
+        if(count($request->all()) > 3) {
+
+            $validator = Validator::make($request->all(), [
+                'name' => 'required',
+                'username' => 'required',
+                'email' => 'required|email'
+            ]);
+
+            if($validator->fails()) {
+                toast(implode("\n", $validator->errors()->all()), 'error');
+    
+                return redirect()->back();
+            }
+
+            $user->name = $request->input('name');
+            $user->username = $request->input('username');
+            $user->email = $request->input('email');
+
+        } else {
+
+            $validator = Validator::make($request->all(), [
+                'img' => 'required',
+            ]);
+
+            if($validator->fails()) {
+                toast(implode("\n", $validator->errors()->all()), 'error');
+    
+                return redirect()->back();
+            }
+
+            $img = 'user-'.$id. '.' .$request->img->extension();
+            $request->file('img')->move(public_path('assets/img'), $img);
+            $user->img = 'assets/img/'.$img;
+
+        }
+
+
+        $user->update();
 
         toast('Profil berhasil diperbarui','success');
 

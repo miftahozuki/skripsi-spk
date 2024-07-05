@@ -27,7 +27,7 @@
 
                   <div class="row align-items-center">
                     <div class="col-auto"><span class="avatar avatar-xl me-4"
-                        style="background-image: url({{ asset('assets/img/user.svg') }})"></span>
+                        style="background-image: url({{ asset($user->img == null ? 'assets/img/user.svg' : $user->img) }})"></span>
                     </div>
                     <div class="col-auto"><a href="#" class="btn btn-outline-success" data-bs-toggle="modal"
                       data-bs-target="#avatar">
@@ -123,11 +123,11 @@
         <h5 class="modal-title">Ganti Avatar</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="#" method="POST">
-      @csrf
+      <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+      @csrf @method('PUT')
       <div class="modal-body">
         <div>
-          <input class="form-control" type="file" id="formFile">
+          <input class="form-control" type="file" id="formFile" name="img" accept=".jpg,.png,.svg" required>
         </div>
       </div>
       <div class="modal-footer justify-content-end">
