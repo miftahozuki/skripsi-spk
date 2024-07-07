@@ -16,6 +16,9 @@
     {
         "src": "/(.*)",
         "dest": "/api/index.php"
+    }, {
+        "src": "/temp",
+        "dest": "/tmp"
     }],
     "env": {
         "APP_ENV": "production",
