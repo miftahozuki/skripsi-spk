@@ -45,7 +45,7 @@ class UserController extends Controller
         } else {
 
             $validator = Validator::make($request->all(), [
-                'img' => 'required',
+                'img' => 'required|max:200',
             ]);
 
             if($validator->fails()) {
