@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 
 class UserController extends Controller
@@ -54,8 +55,9 @@ class UserController extends Controller
             }
 
             $img = 'user-'.$id. '.' .$request->img->extension();
+            $file = Storage::disk('tmp')->put($img, $request->file('img'));
+            dd($file);
             // $request->file('img')->move(public_path('assets/img'), $img);
-            $file = $request->file('img')->storeAs('assets/img', $img, 'public');
             $user->img = 'assets/img/'.$img;
 
         }
