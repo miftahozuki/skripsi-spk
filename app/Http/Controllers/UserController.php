@@ -54,11 +54,8 @@ class UserController extends Controller
                 return redirect()->back();
             }
 
-            $img = 'user-'.$id. '.' .$request->img->extension();
-            $file = Storage::disk('tmp')->put('img/' .$img, file_get_contents($request->file('img')));
-            // $file = Storage::putFileAs('public', $request->file('img'), 'img/' .$img);
-            // $request->file('img')->move(public_path('assets/img'), $img);
-            $user->img = 'assets/img/'.$img;
+            $img = base64_encode(file_get_contents($request->file('img')));
+            $user->img = $img;
 
         }
 

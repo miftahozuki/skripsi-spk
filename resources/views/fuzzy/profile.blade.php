@@ -27,7 +27,7 @@
 
                   <div class="row align-items-center">
                     <div class="col-auto"><span class="avatar avatar-xl me-4"
-                        style="background-image: url({{ asset($user->img == null ? 'assets/img/user.svg' : $user->img) }})"></span>
+                        style="background-image: url('{{ $user->img ? 'data:image/png;base64,' . $user->img : asset('assets/img/user.svg') }}')"></span>
                     </div>
                     <div class="col-auto"><a href="#" class="btn btn-outline-success" data-bs-toggle="modal"
                       data-bs-target="#avatar">
@@ -127,7 +127,7 @@
       @csrf @method('PUT')
       <div class="modal-body">
         <div>
-          <input class="form-control" type="file" id="formFile" name="img" accept=".jpg,.png,.svg" required>
+          <input class="form-control" type="file" id="formFile" name="img" accept=".jpg,.png" required>
         </div>
       </div>
       <div class="modal-footer justify-content-end">
