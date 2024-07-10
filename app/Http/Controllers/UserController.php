@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 
 
 class UserController extends Controller
@@ -45,7 +46,7 @@ class UserController extends Controller
         } else {
 
             $validator = Validator::make($request->all(), [
-                'img' => 'required|max:200',
+                'img' => 'required',
             ]);
 
             if($validator->fails()) {
@@ -54,8 +55,12 @@ class UserController extends Controller
                 return redirect()->back();
             }
 
-            $img = base64_encode(file_get_contents($request->file('img')));
-            $user->img = $img;
+            $img = Image::make($request->file('img'));
+            if($img->width() > 150) {
+                $img->resize(150, null, fn($constraint) => $constraint->aspectRatio());
+            }
+            $img->encode('data-url');
+            $user->img = $img->encoded;
 
         }
 

@@ -79,7 +79,9 @@
           <div class="nav-item dropdown">
             <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
               aria-label="Open user menu">
-              <img class="avatar avatar-sm" src="{{ asset('assets/img/user.svg') }}" alt="M">
+              <div><span class="avatar avatar-sm me-2"
+                style="background-image: url('{{ $user->img ? $user->img : asset('assets/img/user.svg') }}')"></span>
+            </div>
               <div class="d-none d-xl-block ps-2">
                 <div>{{ Auth::user()->name }}</div>
                 <div class="mt-1 small text-muted">{{ Auth::user()->username }}</div>

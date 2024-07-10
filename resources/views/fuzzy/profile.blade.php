@@ -27,7 +27,7 @@
 
                   <div class="row align-items-center">
                     <div class="col-auto"><span class="avatar avatar-xl me-4"
-                        style="background-image: url('{{ $user->img ? 'data:image/png;base64,' . $user->img : asset('assets/img/user.svg') }}')"></span>
+                        style="background-image: url('{{ $user->img ? $user->img : asset('assets/img/user.svg') }}')"></span>
                     </div>
                     <div class="col-auto"><a href="#" class="btn btn-outline-success" data-bs-toggle="modal"
                       data-bs-target="#avatar">
